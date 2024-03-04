@@ -3,13 +3,13 @@
 
 import SwiftUI
 
-struct SettingsFooterView:View {
+public struct SettingsFooterView:View {
     
     var author:String
     var privacyPolicy:String?
     var appVersion:String = AppVersionProvider.appVersion()
     
-    var body: some View {
+    public var body: some View {
         HStack{
             Spacer()
             VStack{

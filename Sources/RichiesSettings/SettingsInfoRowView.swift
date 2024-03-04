@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct SettingsInfoRowView: View {
+public struct SettingsInfoRowView: View {
     
     var label: String
     var description: String? = nil
     var linkLabel:String? = nil
     var linkDestination : String? = nil
     
-    var body: some View {
+    public var body: some View {
         VStack {
             Divider().padding(.vertical, 4)
             HStack{

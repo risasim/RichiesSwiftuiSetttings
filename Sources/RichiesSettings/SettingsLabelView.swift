@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct SettingsLabelView: View {
+public struct SettingsLabelView: View {
     
     var label: String
     var image: String
     
-    var body: some View {
+    public var body: some View {
         HStack{
             Text(LocalizedStringKey(label))
                 .textCase(.uppercase)

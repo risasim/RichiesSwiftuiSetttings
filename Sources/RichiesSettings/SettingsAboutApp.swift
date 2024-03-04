@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct SettingsAboutApp: View {
+public struct SettingsAboutApp: View {
     
     var showUpDivider:Bool = false
     var nameOfAppLogo:String?
     var appDescription:String
     var appIconProvider = AppIconProvider.appIcon()
     
-    var body: some View {
+    public var body: some View {
         Divider().padding(.vertical, 4)
         HStack(alignment: .center, spacing: 10){
             if let name = nameOfAppLogo{

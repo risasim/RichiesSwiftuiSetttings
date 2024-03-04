@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct SettingsToggle: View {
+public struct SettingsToggle: View {
     
     @Binding var toggle:Bool
     var text:String
     var divider:Bool = true
     var color:Color = .gray
     
-    var body: some View {
+    public var body: some View {
         HStack{
             Toggle(text, isOn: $toggle)
 #if os(visionOS)
