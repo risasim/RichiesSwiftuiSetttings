@@ -5,9 +5,14 @@ import SwiftUI
 
 public struct SettingsFooterView:View {
     
-    public var author:String
-    public var privacyPolicy:String?
-    public var appVersion:String = AppVersionProvider.appVersion()
+    var author:String
+    var privacyPolicy:String? = nil
+    var appVersion:String = AppVersionProvider.appVersion()
+    
+    public init(author: String, privacyPolicy: String? = nil) {
+        self.author = author
+        self.privacyPolicy = privacyPolicy
+    }
     
     public var body: some View {
         HStack{

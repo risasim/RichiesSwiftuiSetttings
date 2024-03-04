@@ -9,10 +9,17 @@ import SwiftUI
 
 public struct SettingsToggle: View {
     
-    @Binding public var toggle:Bool
-    public var text:String
-    public var divider:Bool = true
-    public var color:Color = .gray
+    @Binding var toggle:Bool
+    var text:String
+    var divider:Bool
+    var color:Color
+    
+    public init(toggle: Binding<Bool>, text: String, divider: Bool=true, color: Color=Color.gray) {
+        self._toggle = toggle
+        self.text = text
+        self.divider = divider
+        self.color = color
+    }
     
     public var body: some View {
         HStack{

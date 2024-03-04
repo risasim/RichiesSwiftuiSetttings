@@ -9,10 +9,16 @@ import SwiftUI
 
 public struct SettingsAboutApp: View {
     
-    public var showUpDivider:Bool = false
-    public var nameOfAppLogo:String?
-    public var appDescription:String
-    public var appIconProvider = AppIconProvider.appIcon()
+    var showUpDivider:Bool = false
+    var nameOfAppLogo:String?
+    var appDescription:String
+    var appIconProvider = AppIconProvider.appIcon()
+    
+    public init(showUpDivider: Bool=true, nameOfAppLogo: String? = nil, appDescription: String) {
+        self.showUpDivider = showUpDivider
+        self.nameOfAppLogo = nameOfAppLogo
+        self.appDescription = appDescription
+    }
     
     public var body: some View {
         Divider().padding(.vertical, 4)
