@@ -20,6 +20,7 @@ struct SettingsFooterView:View {
                 Text(author)
             }
             .foregroundStyle(Color.gray)
+            .font(.footnote)
             Spacer()
         }
     }
