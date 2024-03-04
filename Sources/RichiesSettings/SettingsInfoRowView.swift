@@ -9,10 +9,10 @@ import SwiftUI
 
 public struct SettingsInfoRowView: View {
     
-    var label: String
-    var description: String? = nil
-    var linkLabel:String? = nil
-    var linkDestination : String? = nil
+    public var label: String
+    public var description: String? = nil
+    public var linkLabel:String? = nil
+    public var linkDestination : String? = nil
     
     public var body: some View {
         VStack {

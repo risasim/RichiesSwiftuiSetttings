@@ -9,7 +9,7 @@ import Foundation
 
 
 
-enum AppIconProvider {
+public enum AppIconProvider {
     static func appIcon(in bundle: Bundle = .main) -> String {
        //1
         guard let icons = bundle.object(forInfoDictionaryKey: "CFBundleIcons") as? [String: Any],

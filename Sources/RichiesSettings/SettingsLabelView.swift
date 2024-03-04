@@ -9,8 +9,8 @@ import SwiftUI
 
 public struct SettingsLabelView: View {
     
-    var label: String
-    var image: String
+    public var label: String
+    public var image: String
     
     public var body: some View {
         HStack{

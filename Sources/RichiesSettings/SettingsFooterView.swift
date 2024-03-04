@@ -5,9 +5,9 @@ import SwiftUI
 
 public struct SettingsFooterView:View {
     
-    var author:String
-    var privacyPolicy:String?
-    var appVersion:String = AppVersionProvider.appVersion()
+    public var author:String
+    public var privacyPolicy:String?
+    public var appVersion:String = AppVersionProvider.appVersion()
     
     public var body: some View {
         HStack{
