@@ -16,13 +16,16 @@ public struct SettingsSendFeedbackView: View {
     var bodyMail:String
     ///Recipients of the email
     var to:String
+    ///Show the settings view
+    @Binding var show:Bool
     
-    public init(label: String, color: Color = Color.gray, subject: String, bodyMail: String = "", to: String) {
+    public init(label: String, color: Color = Color.gray, subject: String, bodyMail: String = "", to: String,show:Binding<Bool>) {
         self.label = label
         self.color = color
         self.subject = subject
         self.bodyMail = bodyMail
         self.to = to
+        self._show = show
     }
     
     public var body: some View {
@@ -37,6 +40,7 @@ public struct SettingsSendFeedbackView: View {
 #endif
                 Spacer()
                 Button(action: {
+                    show.toggle()
                     EmailProvider.shared.sendMail(subject: subject, body: bodyMail, to: to)
                 }, label: {
                     HStack{
@@ -51,5 +55,5 @@ public struct SettingsSendFeedbackView: View {
 }
 
 #Preview {
-    SettingsSendFeedbackView(label: "Feedback", subject: "Sending feedback on an Dreamie App", to: "johnsonpicardo@gmail.com")
+    SettingsSendFeedbackView(label: "Feedback", subject: "Sending feedback on an Dreamie App", to: "johnsonpicardo@gmail.com", show: .constant(true))
 }
