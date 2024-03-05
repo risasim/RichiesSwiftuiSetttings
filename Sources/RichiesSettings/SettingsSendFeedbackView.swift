@@ -41,7 +41,6 @@ public struct SettingsSendFeedbackView: View {
                 Spacer()
                 Button(action: {
                     show.toggle()
-                    EmailProvider.shared.sendMail(subject: subject, body: bodyMail, to: to)
                 }, label: {
                     HStack{
                         Text("Email")
