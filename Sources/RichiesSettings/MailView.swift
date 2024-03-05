@@ -8,19 +8,25 @@
 import SwiftUI
 import MessageUI
 
-struct MailView : UIViewControllerRepresentable{
+public struct MailView : UIViewControllerRepresentable{
     
     var content: String
     var to: String
     var subject: String
     
-    typealias UIViewControllerType = MFMailComposeViewController
+    public init(content: String, to: String, subject: String) {
+        self.content = content
+        self.to = to
+        self.subject = subject
+    }
     
-    func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: Context) {
+    public typealias UIViewControllerType = MFMailComposeViewController
+    
+    public func updateUIViewController(_ uiViewController: MFMailComposeViewController, context: Context) {
         
     }
     
-    func makeUIViewController(context: Context) -> MFMailComposeViewController {
+    public func makeUIViewController(context: Context) -> MFMailComposeViewController {
         if MFMailComposeViewController.canSendMail(){
             let view = MFMailComposeViewController()
             view.mailComposeDelegate = context.coordinator
@@ -33,12 +39,12 @@ struct MailView : UIViewControllerRepresentable{
         }
     }
     
-    func makeCoordinator() -> Coordinator {
+    public func makeCoordinator() -> Coordinator {
         return Coordinator(self)
     }
     
     
-    class Coordinator : NSObject, MFMailComposeViewControllerDelegate{
+    public class Coordinator : NSObject, MFMailComposeViewControllerDelegate{
         
         var parent : MailView
         
@@ -46,7 +52,7 @@ struct MailView : UIViewControllerRepresentable{
             self.parent = parent
         }
         
-        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        public func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
             controller.dismiss(animated: true)
         }
         
