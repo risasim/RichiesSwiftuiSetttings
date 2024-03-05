@@ -18,14 +18,18 @@ public struct SettingsSendFeedbackView: View {
     var to:String
     ///Show the settings view
     @Binding var show:Bool
+    ///
+    var isSheet:Bool
     
-    public init(label: String, color: Color = Color.gray, subject: String, bodyMail: String = "", to: String,show:Binding<Bool>) {
+    
+    public init(label: String, color: Color = Color.gray, subject: String, bodyMail: String = "", to: String,show:Binding<Bool>,isSheet:Bool = false) {
         self.label = label
         self.color = color
         self.subject = subject
         self.bodyMail = bodyMail
         self.to = to
         self._show = show
+        self.isSheet = isSheet
     }
     
     public var body: some View {
@@ -40,8 +44,11 @@ public struct SettingsSendFeedbackView: View {
 #endif
                 Spacer()
                 Button(action: {
-                    EmailProvider.shared.sendMail(subject: subject, body: bodyMail, to: to)
-                    //show.toggle()
+                    if !isSheet{
+                        EmailProvider.shared.sendMail(subject: subject, body: bodyMail, to: to)
+                    }else{
+                        show.toggle()
+                    }
                 }, label: {
                     HStack{
                         Text("Email")
