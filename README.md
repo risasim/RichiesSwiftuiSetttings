@@ -11,7 +11,7 @@ You can use the Swift Package Manager to install RichiesSettings into your Xcode
 
 1. Open your Xcode project.
 2. Navigate to "File" > "Swift Packages" > "Add Package Dependency..."
-3. Enter the URL of this repository: `https://github.com/yourusername/RichiesSettings.git`
+3. Enter the URL of this repository: `https://github.com/risasim/RichiesSwiftuiSetttings.git`
 4. Follow the prompts and select the branch to use.
 5. Click "Finish" to complete the installation process.
 
