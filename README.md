@@ -2,11 +2,6 @@
 
 RichiesSettings is a Swift package that simplifies the management of settings in your iOS, macOS, or tvOS applications. It provides a flexible and easy-to-use interface for handling various types of settings, including user preferences, application configurations, and more.
 
-## Features
-
-- **Type-Safe:** RichiesSettings ensures type safety when accessing and setting values for settings.
-- **Flexible Storage:** Settings can be stored in various formats, including UserDefaults, Property Lists, or even custom storage solutions.
-- **Easy Integration:** Simple integration with your existing projects, making it effortless to manage settings across your application.
 
 ## Installation
 
@@ -37,5 +32,21 @@ struct ContentView: View {
         SettingsFooterView(author: "Richard Simonik", privacyPolicy: "https://en.wikipedia.org/wiki/Wikipedia")
     }
 }
+```
+
+### `SettingsAboutApp`
+
+`SettingsAboutApp` is another component provided by RichiesSettings, which allows you to display information about the app, including a logo and a brief description.
+
+```swift
+import SwiftUI
+import RichiesSettings
+
+struct ContentView: View {
+    var body: some View {
+        SettingsAboutApp(appDescription: "This is a sample app description.")
+    }
+}
+```
 
 
