@@ -22,6 +22,20 @@ You can use the Swift Package Manager to install RichiesSettings into your Xcode
 
 ## Usage
 
-Using RichiesSettings in your project is straightforward. Here's a basic example of how to get started:
+### `SettingsFooterView`
+
+`SettingsFooterView` is a component provided by RichiesSettings that can be used to display version information, author credits, and a privacy policy link.
+
+#### Example Usage:
+
+```swift
+import SwiftUI
+import RichiesSettings
+
+struct ContentView: View {
+    var body: some View {
+        SettingsFooterView(author: "Richard Simonik", privacyPolicy: "https://en.wikipedia.org/wiki/Wikipedia")
+    }
+}
 
 
